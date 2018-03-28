@@ -8,12 +8,12 @@ For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
 
 ## Instructions
-1. First App.
+###1. First App.
 There are 7 steps under lib/FirstAppPages.  
 run each dart file (eg: 1_hello_world.dart)  
 ![Demo_hello_world](Resources/1_hello_world.png)
 
-In this section, covered following items:  
+####In this section, covered following items:  
 Created a Flutter app from the ground up.  
 Written Dart code.  
 Leveraged an external, third party library.  
