@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
+//2_use_external_package
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
