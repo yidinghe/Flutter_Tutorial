@@ -10,14 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Startup Name Generator',
-      home: new Scaffold(
-//        appBar: new AppBar(
-//          title: new Text('Startup Name Generator'),
-//        ),
-        body: new Center(
-          child: new RandomWords(), // With this highlighted text.
-        ),
-      ),
+      home:  new RandomWords(), // With this highlighted text.
     );
   }
 }
