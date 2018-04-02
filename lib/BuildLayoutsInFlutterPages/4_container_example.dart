@@ -45,14 +45,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: new Container(
                   decoration: boxDecoration,
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/lake.jpg'),
+                  child: new Image.asset('images/pic1.jpg'),
                 ),
               ),
               new Expanded(
                 child: new Container(
                   decoration: boxDecoration,
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/lake.jpg'),
+                  child: new Image.asset('images/pic2.jpg'),
                 ),
               ),
             ],
@@ -63,14 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: new Container(
                   decoration: boxDecoration,
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/berries.jpg'),
+                  child: new Image.asset('images/pic3.jpg'),
                 ),
               ),
               new Expanded(
                 child: new Container(
                   decoration: boxDecoration,
                   margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/berries.jpg'),
+                  child: new Image.asset('images/pic4.jpg'),
                 ),
               ),
             ],
