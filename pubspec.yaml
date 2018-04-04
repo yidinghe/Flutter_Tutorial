@@ -1,4 +1,4 @@
-name: startup_namer
+name: Flutter_Demo
 description: A new Flutter application.
 
 dependencies:
@@ -9,6 +9,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.0
   english_words: ^3.1.0
+  flutter_gallery_assets: ^0.0.21
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,36 @@ flutter:
   assets:
     - images/lake.jpg
     - images/berries.jpg
+    - images/pic1.jpg
+    - images/pic2.jpg
+    - images/pic3.jpg
+    - images/pic4.jpg
+    - images/pic5.jpg
+    - images/pic6.jpg
+    - images/pic7.jpg
+    - images/pic8.jpg
+    - images/pic9.jpg
+    - images/pic10.jpg
+    - images/pic11.jpg
+    - images/pic12.jpg
+    - images/pic13.jpg
+    - images/pic14.jpg
+    - images/pic15.jpg
+    - images/pic16.jpg
+    - images/pic17.jpg
+    - images/pic18.jpg
+    - images/pic19.jpg
+    - images/pic20.jpg
+    - images/pic21.jpg
+    - images/pic22.jpg
+    - images/pic23.jpg
+    - images/pic24.jpg
+    - images/pic25.jpg
+    - images/pic26.jpg
+    - images/pic27.jpg
+    - images/pic28.jpg
+    - images/pic29.jpg
+    - images/pic30.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
