@@ -4,8 +4,12 @@ import 'package:flutter/foundation.dart';
 const String _kGalleryAssetsPackage = 'flutter_gallery_assets';
 
 class TravelDestination {
-  const TravelDestination(
-      {this.assetName, this.assetPackage, this.title, this.description});
+  const TravelDestination({
+    this.assetName,
+    this.assetPackage,
+    this.title,
+    this.description,
+  });
 
   final String assetName;
   final String assetPackage;
@@ -41,13 +45,12 @@ final List<TravelDestination> destinations = <TravelDestination>[
 ];
 
 class TravelDestinationItem extends StatelessWidget {
-  TravelDestinationItem({Key key, @required this.destination, this.shape})
+  TravelDestinationItem({Key key, @required this.destination})
       : assert(destination != null && destination.isValid),
         super(key: key);
 
   static const double height = 366.0;
   final TravelDestination destination;
-  final ShapeBorder shape;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +58,7 @@ class TravelDestinationItem extends StatelessWidget {
     final TextStyle titleStyle =
         theme.textTheme.headline.copyWith(color: Colors.white);
     final TextStyle descriptionStyle = theme.textTheme.subhead;
-    //TODO shapeBoarder not exist
+
     return new SafeArea(
       top: false,
       bottom: false,
@@ -63,7 +66,6 @@ class TravelDestinationItem extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         height: height,
         child: new Card(
-          //   shape: shape,
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -155,6 +157,8 @@ class TravelDestinationItem extends StatelessWidget {
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+  static const String routeName = '/material/cards';
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -177,32 +181,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  ShapeBorder _shape;
+  static const String routeName = '/material/cards';
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
           title: const Text('Travel stream'),
-          actions: <Widget>[
-            new IconButton(
-              icon: const Icon(Icons.sentiment_very_satisfied),
-              onPressed: () {
-                setState(() {
-                  _shape = _shape != null
-                      ? null
-                      : const RoundedRectangleBorder(
-                          borderRadius: const BorderRadius.only(
-                            topLeft: const Radius.circular(16.0),
-                            topRight: const Radius.circular(16.0),
-                            bottomLeft: const Radius.circular(2.0),
-                            bottomRight: const Radius.circular(2.0),
-                          ),
-                        );
-                });
-              },
-            ),
-          ],
         ),
         body: new ListView(
             itemExtent: TravelDestinationItem.height,
@@ -212,7 +197,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 margin: const EdgeInsets.only(bottom: 8.0),
                 child: new TravelDestinationItem(
                   destination: destination,
-                  shape: _shape,
                 ),
               );
             }).toList()));
