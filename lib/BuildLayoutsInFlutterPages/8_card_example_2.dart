@@ -65,6 +65,8 @@ class TravelDestinationItem extends StatelessWidget {
       child: new Container(
         padding: const EdgeInsets.all(8.0),
         height: height,
+        //For Card widget, it seems like for beta version, there is no shapeboarder. But for
+        //the demo from Flutter Demo master version, Card will have shapeboarder field.
         child: new Card(
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
