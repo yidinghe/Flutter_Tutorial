@@ -60,6 +60,16 @@ flutter:
     - images/pic29.jpg
     - images/pic30.jpg
 
+#  for fonts, must directly under flutter: or will causing the connected device cannot find problem.
+  fonts:
+      - family: woff
+        fonts:
+          - asset: fonts/315FC1_9_0.woff.ttf
+            style: italic
+      - family: komi
+        fonts:
+          - asset: fonts/KOMIKRAK.ttf
+            weight: 700
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
