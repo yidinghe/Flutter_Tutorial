@@ -2,10 +2,13 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'dart:async';
+import 'dart:io';
 
 Future<Post> fetchPost() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+  final response = await http.get(
+    'https://jsonplaceholder.typicode.com/posts/1',
+    headers: {HttpHeaders.AUTHORIZATION: "Basic your_api_token_here"},
+  );
   final responseJson = json.decode(response.body);
   return new Post.fromJson(responseJson);
 }
