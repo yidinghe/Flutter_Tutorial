@@ -9,9 +9,8 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
       await client.get('https://jsonplaceholder.typicode.com/photos');
 
   // Use the compute function to run parsePhotos in a separate isolate
-  // TODO seems like there is a bug for beta chanel v0.2.8. Need to try master chanel
-  // return compute(parsePhotos, response.body);
-  return parsePhotos(response.body);
+   return compute(parsePhotos, response.body);
+  // return parsePhotos(response.body);
 }
 
 // A function that will convert a response body into a List<Photo>
