@@ -1,4 +1,4 @@
-package com.yourcompany.startupnamer;
+package com.yidinghe.fluttertutorial;
 
 import android.os.Bundle;
 
