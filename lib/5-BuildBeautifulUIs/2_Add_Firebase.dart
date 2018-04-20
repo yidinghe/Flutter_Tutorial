@@ -118,7 +118,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                   },
                   onSubmitted: _handleSubmitted,
                   decoration:
-                      new InputDecoration.collapsed(hintText: 'Send a message'),
+                  new InputDecoration.collapsed(hintText: 'Send a message'),
                 ),
               ),
               new Container(
@@ -171,8 +171,8 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
         ),
         decoration: Theme.of(context).platform == TargetPlatform.android
             ? new BoxDecoration(
-                border:
-                    new Border(top: new BorderSide(color: Colors.grey[200])))
+            border:
+            new Border(top: new BorderSide(color: Colors.grey[200])))
             : null,
       ),
     );
