@@ -2,27 +2,44 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+final List<String> images = [
+  "images/wallpapers/wallpaper1.jpg",
+  "images/wallpapers/wallpaper2.jpg",
+  "images/wallpapers/wallpaper3.jpg",
+];
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Gallery Demo',
-      theme: ThemeData(primarySwatch: Colors.lightGreen),
+      theme: ThemeData(primarySwatch: Colors.deepOrange),
       home: DisplayPage(),
     );
   }
 }
 
-class DisplayPage extends StatelessWidget {
-  final List<String> images = [
-    "images/wallpapers/wallpaper1.jpg",
-    "images/wallpapers/wallpaper2.jpg",
-    "images/wallpapers/wallpaper3.jpg",
-  ];
+class DisplayPage extends StatefulWidget {
+  @override
+  _DisplayPageState createState() => new _DisplayPageState();
+}
+
+class _DisplayPageState extends State<DisplayPage> {
+  bool _isAddGradient = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _isAddGradient = !_isAddGradient;
+          setState(() {
+            _isAddGradient;
+          });
+        },
+        tooltip: 'Switch Gradient Effect',
+        child: Icon(Icons.all_inclusive),
+      ),
       body: Center(
           child: SizedBox.fromSize(
         size: Size.fromHeight(550.0),
@@ -30,7 +47,7 @@ class DisplayPage extends StatelessWidget {
           controller: PageController(viewportFraction: 0.8),
           itemCount: images.length,
           itemBuilder: (BuildContext context, int index) {
-            return new Padding(
+            return Padding(
               padding: EdgeInsets.symmetric(
                 vertical: 16.0,
                 horizontal: 8.0,
@@ -51,6 +68,7 @@ class DisplayPage extends StatelessWidget {
                   }
                   Scaffold.of(context).showSnackBar(SnackBar(
                         backgroundColor: Colors.deepOrangeAccent,
+                        duration: Duration(milliseconds: 800),
                         content: Center(
                           child: Text(
                             description,
@@ -69,18 +87,20 @@ class DisplayPage extends StatelessWidget {
                         images[index],
                         fit: BoxFit.cover,
                       ),
-//                    DecoratedBox(
-//                      decoration: BoxDecoration(
-//                        gradient: LinearGradient(
-//                          begin: FractionalOffset.bottomCenter,
-//                          end: FractionalOffset.topCenter,
-//                          colors: [
-//                            Color(0x00000000).withOpacity(0.9),
-//                            Color(0xff000000).withOpacity(0.01),
-//                          ],
-//                        ),
-//                      ),
-//                    ),
+                      DecoratedBox(
+                        decoration: _isAddGradient
+                            ? BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: FractionalOffset.bottomRight,
+                                  end: FractionalOffset.topLeft,
+                                  colors: [
+                                    Color(0x00000000).withOpacity(0.9),
+                                    Color(0xff000000).withOpacity(0.01),
+                                  ],
+                                ),
+                              )
+                            : BoxDecoration(),
+                      ),
                     ],
                   ),
                 ),
