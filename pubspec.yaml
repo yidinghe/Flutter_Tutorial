@@ -63,6 +63,9 @@ flutter:
     - images/pic28.jpg
     - images/pic29.jpg
     - images/pic30.jpg
+    - images/wallpapers/wallpaper1.jpg
+    - images/wallpapers/wallpaper2.jpg
+    - images/wallpapers/wallpaper3.jpg
 
 #  for fonts, must directly under flutter: or will causing the connected device cannot find problem.
   fonts:
