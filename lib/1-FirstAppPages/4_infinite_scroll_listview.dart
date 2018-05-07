@@ -3,14 +3,14 @@ import 'package:english_words/english_words.dart';
 
 //4_infinite_scroll_listview
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Startup Name Generator',
-      home:  new RandomWords(), // With this highlighted text.
+      home: RandomWords(), // With this highlighted text.
     );
   }
 }
@@ -18,21 +18,20 @@ class MyApp extends StatelessWidget {
 class RandomWords extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new RandomWordsState();
+    return RandomWordsState();
   }
 }
 
 class RandomWordsState extends State<RandomWords> {
-
   final _suggestions = <WordPair>[];
 
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
   Widget _buildSuggestions() {
-    return new ListView.builder(
-        padding: const EdgeInsets.all(16.0),
+    return ListView.builder(
+        padding: EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
-          if (i.isOdd) return new Divider();
+          if (i.isOdd) return Divider();
           final index = i ~/ 2;
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
@@ -42,8 +41,8 @@ class RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildRow(WordPair pair) {
-    return new ListTile(
-      title: new Text(
+    return ListTile(
+      title: Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
@@ -52,9 +51,9 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Startup Name Generator'),
       ),
       body: _buildSuggestions(),
     );

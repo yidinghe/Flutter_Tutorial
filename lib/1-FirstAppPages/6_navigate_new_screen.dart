@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
-//6_navigate_new_screen
+//6_navigate__screen
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Startup Name Generator',
-      home:  new RandomWords(), // With this highlighted text.
+      home: RandomWords(), // With this highlighted text.
     );
   }
 }
@@ -18,22 +18,22 @@ class MyApp extends StatelessWidget {
 class RandomWords extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new RandomWordsState();
+    return RandomWordsState();
   }
 }
 
 class RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
 
-  final _saved = new Set<WordPair>();
+  final _saved = Set<WordPair>();
 
-  final _biggerFont = const TextStyle(fontSize: 18.0);
+  final _biggerFont = TextStyle(fontSize: 18.0);
 
   Widget _buildSuggestions() {
-    return new ListView.builder(
-        padding: const EdgeInsets.all(16.0),
+    return ListView.builder(
+        padding: EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
-          if (i.isOdd) return new Divider();
+          if (i.isOdd) return Divider();
           final index = i ~/ 2;
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
@@ -45,12 +45,12 @@ class RandomWordsState extends State<RandomWords> {
   Widget _buildRow(WordPair pair) {
     final alreadySaved = _saved.contains(pair);
 
-    return new ListTile(
-      title: new Text(
+    return ListTile(
+      title: Text(
         pair.asPascalCase,
         style: _biggerFont,
       ),
-      trailing: new Icon(
+      trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: alreadySaved ? Colors.red : null,
       ),
@@ -68,11 +68,11 @@ class RandomWordsState extends State<RandomWords> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Startup Name Generator'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Startup Name Generator'),
         actions: <Widget>[
-          new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved)
+          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved)
         ],
       ),
       body: _buildSuggestions(),
@@ -81,12 +81,12 @@ class RandomWordsState extends State<RandomWords> {
 
   void _pushSaved() {
     Navigator.of(context).push(
-      new MaterialPageRoute(
+      MaterialPageRoute(
         builder: (context) {
           final tiles = _saved.map(
             (pair) {
-              return new ListTile(
-                title: new Text(
+              return ListTile(
+                title: Text(
                   pair.asPascalCase,
                   style: _biggerFont,
                 ),
@@ -101,11 +101,11 @@ class RandomWordsState extends State<RandomWords> {
               )
               .toList();
 
-          return new Scaffold(
-            appBar: new AppBar(
-              title: new Text('Saved Suggestions'),
+          return Scaffold(
+            appBar: AppBar(
+              title: Text('Saved Suggestions'),
             ),
-            body: new ListView(children: divided),
+            body: ListView(children: divided),
           );
         },
       ),
