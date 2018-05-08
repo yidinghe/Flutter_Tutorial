@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -21,56 +21,56 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return new _MyHomePageState();
+    return _MyHomePageState();
   }
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var boxDecoration = new BoxDecoration(
-      border: new Border.all(width: 10.0, color: Colors.black38),
-      borderRadius: const BorderRadius.all(const Radius.circular(8.0)),
+    var boxDecoration = BoxDecoration(
+      border: Border.all(width: 10.0, color: Colors.black38),
+      borderRadius: BorderRadius.all(Radius.circular(8.0)),
     );
 
-    var container = new Container(
-      decoration: new BoxDecoration(
+    var container = Container(
+      decoration: BoxDecoration(
         color: Colors.black26,
       ),
-      child: new Column(
+      child: Column(
         children: <Widget>[
-          new Row(
+          Row(
             children: <Widget>[
-              new Expanded(
-                child: new Container(
+              Expanded(
+                child: Container(
                   decoration: boxDecoration,
-                  margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic1.jpg'),
+                  margin: EdgeInsets.all(4.0),
+                  child: Image.asset('images/pic1.jpg'),
                 ),
               ),
-              new Expanded(
-                child: new Container(
+              Expanded(
+                child: Container(
                   decoration: boxDecoration,
-                  margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic2.jpg'),
+                  margin: EdgeInsets.all(4.0),
+                  child: Image.asset('images/pic2.jpg'),
                 ),
               ),
             ],
           ),
-          new Row(
+          Row(
             children: <Widget>[
-              new Expanded(
-                child: new Container(
+              Expanded(
+                child: Container(
                   decoration: boxDecoration,
-                  margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic3.jpg'),
+                  margin: EdgeInsets.all(4.0),
+                  child: Image.asset('images/pic3.jpg'),
                 ),
               ),
-              new Expanded(
-                child: new Container(
+              Expanded(
+                child: Container(
                   decoration: boxDecoration,
-                  margin: const EdgeInsets.all(4.0),
-                  child: new Image.asset('images/pic4.jpg'),
+                  margin: EdgeInsets.all(4.0),
+                  child: Image.asset('images/pic4.jpg'),
                 ),
               ),
             ],
@@ -79,11 +79,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
       ),
-      body: new Center(child: container),
+      body: Center(child: container),
     );
   }
 }
