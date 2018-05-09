@@ -25,7 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 List<Container> _buildGridTileList(int count) {
-  List<Container> containers = new List<Container>.generate(
+  List<Container> containers =  List<Container>.generate(
     count,
     (int index) => Container(
           child: Image.asset('images/pic${index + 1}.jpg'),
